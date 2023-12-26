@@ -13,4 +13,4 @@ This can be found under Administration > Security > Secure Shell Key
 ## Usage
 Update the $ILO4 and $ILOPORT variables in the script, or the script will ask you to enter those variables.
 
-You can either execute the shell script directly, or schedule at run-time. Be sure to set authorized keys or script will nag you for Administrator password.
+You can either execute the shell script directly, or schedule at boot time. Be sure to set authorized keys or script will nag you for Administrator password.
