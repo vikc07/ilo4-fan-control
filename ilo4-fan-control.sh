@@ -1,14 +1,13 @@
 #!/bin/bash
 # Calm down those ProLiant jet fans
 # Vikram Chauhan
-# Ver: 1.1
+# Ver: 1.2
 # Updated: Jan 1, 2024
 
 ILO4= # ip or hostname of ilo4
 ILOPORT= # port
 ILOUSER=Administrator # ilo user
 OPTS="-oKexAlgorithms=+diffie-hellman-group1-sha1 \
--oKexAlgorithms=+diffie-hellman-group1-sha1 \
 -oHostKeyAlgorithms=+ssh-rsa \
 -o PubkeyAcceptedKeyTypes=+ssh-rsa"
 LO=1600 # adjust the low value
@@ -39,7 +38,7 @@ done
 
 for PID in `seq 50 65`;
 do
-	ssh $ILO4 -p $ILOPORT -l $ILOUSER -o $OPTS "fan pid $PID hi $HI"
+	ssh $ILO4 -p $ILOPORT -l $ILOUSER $OPTS "fan pid $PID hi $HI"
 done
 
 echo "done"
